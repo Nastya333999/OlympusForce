@@ -57,7 +57,7 @@ class FileDataCreator {
                     apps?.get("orig_cost").toString()
                 )
                 appendQueryParameter(
-                    res.getString(R.string.zsdc),
+                    res.getString(R.string.af_siteid_key),
                     apps?.get("af_siteid").toString()
                 )
             }.toString()
