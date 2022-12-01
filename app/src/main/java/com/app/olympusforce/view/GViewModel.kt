@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.app.olympusforce.R
 import com.app.olympusforce.data.DTItem
 
-class GViewModel:ViewModel() {
+class GViewModel : ViewModel() {
 
     var position = MutableLiveData<Int>(0)
     var credits = MutableLiveData<Int>(110)
@@ -17,7 +17,7 @@ class GViewModel:ViewModel() {
         R.drawable.i3,
         R.drawable.i4,
         R.drawable.i5,
-        )
+    )
 
 
     val items = MutableLiveData<MutableList<DTItem>>(mutableListOf())
@@ -133,7 +133,7 @@ class GViewModel:ViewModel() {
                 )
             )
         }
-        items.value = list
+        items.value = list!!
     }
 
     fun addMoney() {
