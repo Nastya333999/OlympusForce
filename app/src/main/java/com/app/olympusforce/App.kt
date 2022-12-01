@@ -27,7 +27,7 @@ class App : Application() {
             Fb.dF(this) { deep ->
                 val uId = Apssss.uid(this)
                 val adId = AdvertisingIdClient.getAdvertisingIdInfo(this@App).id.toString()
-                val oneWrapper = OS(this@App, uId)
+                val oneWrapper = OS(this@App, adId)
                 oneWrapper.send(apps?.get("campaign").toString(), deep)
 
                 callbacks.invoke(

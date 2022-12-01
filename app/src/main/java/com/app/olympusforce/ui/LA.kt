@@ -2,6 +2,11 @@ package com.app.olympusforce.ui
 
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.BounceInterpolator
+import android.view.animation.TranslateAnimation
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavArgument
@@ -21,6 +26,8 @@ class LA : AppCompatActivity() {
         binding = ActivityLoadingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initUi()
+
         viewModel.viewModelInit()
         viewModel._data.observe(this) { url ->
             if (url.isEmpty()) return@observe
@@ -37,4 +44,16 @@ class LA : AppCompatActivity() {
             binding.frame.visibility = View.VISIBLE
         }
     }
+
+    private fun initUi() {
+        val txtAppName = findViewById<TextView>(R.id.txtAppName)
+
+        txtAppName.startAnimation(
+            AnimationUtils.loadAnimation(
+                this,
+                R.anim.zoom_in_zoom_out
+            )
+        )
+    }
+
 }
